@@ -1,1 +1,23 @@
 <h1>Hello wordl</h1>
+
+<script  type="text/javascript">
+var myHeaders = new Headers();
+        fetch('https://localhost:4030/',
+        {
+            method: 'GET',  
+            mode: 'cors',
+            headers:myHeaders
+        })
+        .then((respuesta) => {
+            return respuesta.json();
+        }).then((respuesta) => {
+           
+            
+            document.getElementById('mensaje').value = respuesta.message;
+        })
+</script>
+
+
+<div id="informacion">      
+        <input type="text" id="mensaje" value="Cargando..."/>
+</div>

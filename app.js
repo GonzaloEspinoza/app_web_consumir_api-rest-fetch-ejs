@@ -5,11 +5,15 @@ const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
 
+
+
 //initialization
 const app = express();
 require('./database/collections/connect');
 require('./passport/local-auth');
 
+//public static (botstrap)
+app.use(express.static('public'));
 
 //middleware
 app.use(morgan('dev'));
