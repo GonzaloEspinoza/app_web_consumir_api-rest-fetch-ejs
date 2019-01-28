@@ -48,7 +48,7 @@ app.set('view engine', 'ejs')
 app.use('/', service)
 
 //listen
-app.set('port', process.env.PORT || 3035);
+app.set('port', process.env.PORT || 3060);
 
 app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));

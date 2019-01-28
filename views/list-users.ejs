@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://localhost:3060/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Lista de usuarios</title>
+  </head>
+  <body>
+    <div class="container my-5 text-center">
+        <button class="btn btn-primary w-100" onclick="mostrar()">listart los usuarios</button>
+        
+        <div class="mt-5" id="contenido">
+            
+                
+                <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">rol</th>
+                          </tr>
+                        </thead>
+                        <% for(indice in resp) {%>
+                        <tbody>
+                               
+                          <tr>
+                            <th scope="row"><%= indice %></th>
+                            <td><%= resp[indice].name %></td>
+                            <td><%= resp[indice].lastname %></td>
+                            <td><%= resp[indice].email %></td>
+                            <td><%= resp[indice].role %></td>
+                          </tr>
+                         
+                        </tbody>
+                        <% } %>
+                      </table>
+                
+        </div>
+    </div>
+    
+    <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody id="prueba">
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+
+        
+            <h2>Change role of User</h2>
+            
+            <script>
+                var pruebaId = document.querySelector('#prueba')
+                
+                
+                 for(indice in resp) {
+                    pruebaId.innerHTML = resp[indice].name
+                    console.log(resp[indice].name)
+                };   
+                
+            </script>
+      
+    
+
+</body>
+</html>

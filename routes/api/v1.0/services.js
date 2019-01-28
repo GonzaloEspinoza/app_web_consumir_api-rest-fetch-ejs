@@ -71,5 +71,23 @@ route.get('/texto', (req, res, next)=>{
 })
 
 
+route.get('/userlist',(req, res, next)=>{
+
+    fetch('http://localhost:4030/user')
+    .then(resp => resp.json())
+    .then(resp =>{
+        //console.log(resp)
+        res.render('list-users',{resp:resp});
+    })
+})
+
+
+route.get('/perfil',(req, res, next)=>{
+    fetch('https://randomuser.me/api/')
+    .then(user => user.json())
+    .then(user =>{
+        
+    })
+})
 
 module.exports = route;
